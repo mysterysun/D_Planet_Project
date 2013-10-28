@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>RS13 | Free CSS Template by Ramblingsoul</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="js/jquery-1.1.3.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.easing.min.js"></script>
+    <script type="text/javascript" src="js/jquery.lavalamp.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $("#1, #2, #3").lavaLamp({
+                fx: "backout", 
+                speed: 700,
+                click: function(event, menuItem) {
+                   return true;
+                }
+            });
+        });
+    </script>
+
+    <link href="lavalamp.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div id="wrap">
+
+<div id="topbg"> </div>
+<div id="wrap2">
+<div id="topbar">
+<h1 id="sitename">Dota Planet</h1>
+
+ 
+</div><div id="header">
+<div id="headercontent">
+</div>
+
+<div id="topnav">
+  <ul class="lavaLampWithImage" id="1">
+    <li class="current"><%= link_to 'Home' %></a></li>
+    <li class="current"><%= link_to 'Store',store_index_path %></a></li>
+    <li><a href="notes.html">Video</a></li>
+    <li class="current"><%= link_to 'Sign In', new_user_path %></a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Others</a></li>
+  </ul>
+</div>
+
+</div>
+  
+
+<script type="text/javascript">jwplayer.key="EM0y59lCwb0uR9FL/JIgoq3QWFDpneewOP2x/g==";</script>
+<center><div id="video">Loading the player ...</div></center>
+<script type="text/javascript">
+    jwplayer("video").setup({
+        flashplayer: "<%=asset_path('jwplayer.flash.swf')%>",
+        image:"/cs.jpg",
+        file: "/1.mp4",
+	autostart:true,
+        height: 400,
+        width: 949,
+        analytics: {
+            enabled: false,
+            cookies: false
+        }
+    });
+</script>
+
+<div id="footer">
+Copyright &copy; D_Planet.com | <a href="#">Put</a> | <a href="#">Some</a> | <a href="#">Links</a> | <a href="#">Here</a>
+<div class="credit"><a href="sjf" title="download free, high quality css templates">D_Planet by </a>Team Arrows</div>
+</div>
+</div>
+<div id="btmbg"> </div>
+</div>
+
+
+
+
+</body>
+</html>
