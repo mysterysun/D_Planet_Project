@@ -1,0 +1,32 @@
+
+<%= stylesheet_link_tag "video_store" %>
+<h1>Dota2 Videos
+  <div id="signIn">
+    <% if session[:userName]!=nil %>
+        <!--<span id="notSignIn"><%#=link_to "Sign In" ,login_url %></span>-->
+        <div id="welcomeUser" >Hi, <span id="text"><%=session[:userName]%></div>
+        <div id="signOutNow"><%=link_to "Sign Out" ,logout_url,:method => 'delete' %></div>
+    <% else %>
+        <span id="notSignIn"><%=link_to "Sign In" ,login_url %></span>
+    <% end %>
+  </div>
+</h1>
+
+
+
+
+<!--<input type="button" value="Log out" id="signOut">-->
+<% @videos.each do |video| %>
+    <div class="entry">
+      <%= image_tag(video.image_url) %>
+      <h3><%= video.title %></h3>
+
+      <p style="float:left"><%= sanitize(video.description) %></p>
+       <div style="clear:both"></div>
+      <div class="kind_line">
+        <span class="kind"><%= video.kind %></span>
+        <%= link_to 'Watch', video %><br/>
+
+      </div>
+    </div>
+<% end %>

@@ -1,0 +1,38 @@
+
+fieldset {
+    background: #efe;
+}
+legend {
+    color: #dfd;
+    background: #141;
+    font-family: sans-serif;
+    padding: 0.2em 1em;
+}
+
+
+label {
+    width: 5em;
+    float: left;
+    text-align: right;
+    padding-top: 0.8em;
+    margin-right: 0.1em;
+    display: block;
+}
+
+select, textarea, input {
+    margin-left: 0.5em;
+
+    margin-top: 10px;
+}
+
+.submit {
+    margin-left: 4em;
+}
+br {
+    display: none
+}
+
+#place_order{
+    margin-top:10px ;
+}
+

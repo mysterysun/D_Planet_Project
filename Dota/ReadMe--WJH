@@ -1,0 +1,1 @@
+我的首页在views/users/index.html.erb 下 导航栏和sign in已经写好了，你只要加上视频和footer信息就可以了。 相对应的homepage.css附上除了导航栏其余部分的css 就行了。 访问localhost:3000/d_planet 就可以访问主页，然后sign in 其余功能就行了

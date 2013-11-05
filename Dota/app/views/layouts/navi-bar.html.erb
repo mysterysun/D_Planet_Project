@@ -1,0 +1,37 @@
+<html>
+<head>
+  <title>DotaPlanet</title>
+  <%= stylesheet_link_tag    "application", :media => "none" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+
+
+<div id='cssmenu' style="height:60px">
+  <ul>
+    <li class='active'><a href='/users'><span>Home</span></a></li>
+    <li class='has-sub'><a href='#'><span>Store</span></a>
+      <ul>
+        <li class="first"><%= link_to 'Item',store_url %></a></li>
+        <li style="padding-top: 0px"><a href='#'><span>Garage Kit</span></a></li>
+        <li class='last' style="padding-top: 0px"><a href='#'><span id="shirt">T-shirt</span></a></li>
+      </ul>
+    </li>
+    <li class='has-sub'><a href='#'><span>Video</span></a>
+      <ul>
+        <li class="first"><a href='#'><span>Watch Video</span></a></li>
+        <li class='last' style="padding-top: 0px"><a href='#'><span>Record Video</span></a></li>
+      </ul>
+    </li>
+    <li><a href='#'><span>Others</span></a></li>
+    <li class='last'><a href='#'><span>About Us</span></a></li>
+  </ul>
+</div>
+<div id="main">
+  <%= yield %>
+</div>
+
+</body>
+</html>
