@@ -1,0 +1,44 @@
+<% if notice %>
+<p id="notice" style="margin-left: 5px;color:red"><%= notice %></p>
+<% end %>
+<%= stylesheet_link_tag "store" %>
+<h1 style="text-align: center;padding-left:300px">Dota2 Equipments
+  <div id="session_exist" style="color:red;font-size: 15px;text-align:right;padding-top: 10px;float:right" hidden>Welcome back,<span id="notice"><%= session[:userName] %></span></div> <br/>
+  <div id="signIn" hidden><%=link_to "Sign In" ,login_url %></div>
+  <div id="signOut" hidden><%=link_to "Sign Out" ,logout_url,:method => 'delete' %></div>
+  <div style="clear:both"></div>
+</h1>
+
+
+<!--<input type="button" value="Log out" id="signOut">-->
+<% @products.each do |product| %>
+    <div class="entry">
+      <%#= link_to image_tag("cs.jpg")%>
+      <a href="/products/<%= product.id.to_s %>"><img src="/assets/<%= product.image_url %>" alt="cs"/> </a>
+      <a href="/products/<%= product.id.to_s %>"> <h3><%= product.title %><p style="font-size:10px;color:red;display:inline;position: absolute;left:60%" >Quantity</p></h3> </a>
+
+      <p style="float:left"><%= sanitize(product.description) %></p>
+      <form id="quantity<%= product.id.to_s%>" >
+      <input style="float:left;text-align: center" type='text' class="changeQty"  value='1'  size='1px' id="Qty<%= product.id.to_s%>" />
+      </form>
+      <div style="clear:both"></div>
+      <div class="price_line">
+        <span class="price"><%= number_to_currency(product.price) %></span>
+       <input type="button" value='Add to Cart' class="cssbutton bluebutton button_to" id ="product<%= product.id.to_s %>" />
+
+      </div>
+
+
+   <script type="text/javascript">
+      $('#product<%= product.id.to_s%>').bind('click',function(){
+          if($('#notice').text()==""){
+              alert("You need to login first for shopping")
+              return
+          }
+          $('#quantity<%= product.id.to_s%>').attr("action", "/line_items?product_id=<%= product.id.to_s%>"+"&product_qty="+$('#Qty<%= product.id.to_s%>').val())
+          $('#quantity<%= product.id.to_s%>').attr("method","post")
+          $('#quantity<%= product.id.to_s%>').submit()
+      })
+   </script>
+    </div>
+<% end %>
