@@ -1,6 +1,6 @@
 set :stage, :production
 set :rvm_type, :user #Tell rvm to look in ~/.rvm
-set :rvm_ruby_version, '1.9.3-p448'
+set :rvm_ruby_version, '2.0.0-p247'
 # Simple Role Syntax
 # ==================
 # Supports bulk-adding hosts to roles, the primary
